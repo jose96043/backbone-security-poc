@@ -6,15 +6,15 @@ define([
 	'views/HomeView',
 	'views/LoginView',
 	'views/NavbarView',/*
-	'views/ProfileView',
-	'models/UserModel',*/
+	'views/ProfileView',*/
+	'models/UserModel',
 	'Session'
-], function($, _,  Backbone, BaseRouter, HomeView, LoginView, NavbarView/*, ProfileView, UserModel*/, Session){
+], function($, _,  Backbone, BaseRouter, HomeView, LoginView, NavbarView/*, ProfileView*/, UserModel, Session){
 
 	var Router = BaseRouter.extend({
 		initialize: function(){
 			console.log("Router initialized");
-			$('.head').html((new NavbarView).render().$el);
+			
 		},
 
 		routes : {
@@ -57,27 +57,32 @@ define([
 
 		after : function(){
 			//empty
+			this.changeView("head", new NavbarView(
+				{
+					user:Session.get('user')
+				}
+			));
 		},
 
-		changeView : function(view){
+		changeView : function(parent, view){
 			//Close is a method in BaseView
 			//that check for childViews and 
 			//close them before closing the 
 			//parentView
-			function setView(view){
-				if(this.currentView){
-					this.currentView.close();
+			function setView(parent, view){
+				if(this[parent]){
+					this[parent].close();
 				}
-				this.currentView = view;
-				$('.container').html(view.render().$el);
+				this[parent] = view;
+				$("."+parent).html(view.render().$el);
 			}
 
-			setView(view);
+			setView(parent, view);
 		},
 
 		showLogin : function(){
 			var loginView = new LoginView();
-			this.changeView(loginView);
+			this.changeView("container",loginView);
 		},
 
 		showProfile : function(){
@@ -90,7 +95,7 @@ define([
 					var profileView = new ProfileView({
 						model : userModel
 					});
-					that.changeView(profileView);
+					that.changeView("container",profileView);
 				})
 				.fail(function(error){
 					//In case that session expired
@@ -100,7 +105,7 @@ define([
 
 		showHome : function(){
 			var homeView = new HomeView();
-			this.changeView(homeView);
+			this.changeView("container",homeView);
 		},
 
 		fetchError : function(error){

@@ -1,3 +1,5 @@
+$fa-font-path: "../../bower_components/components-font-awesome/fonts";
+@import 'components-font-awesome/scss/font-awesome';
 @import 'sass-bootstrap/lib/bootstrap';
 
 .hero-unit {
@@ -10,14 +12,99 @@ $secondary-color: #3498db;
 
 /*Navbar*/
 .navbar {
-   /*background-color: #003040;
-   border-color: #003040;*/
-   background-color: $primary-color;
-   border-color: $primary-color;
-   margin-bottom:0px;
-   border-radius:0px;
-   z-index:1;
-   .navbar-brand {
-        color: white;
-    }
+  /*background-color: #003040;
+  border-color: #003040;*/
+  background-color: $primary-color;
+  border-color: $primary-color;
+  margin-bottom:0px;
+  border-radius:0px;
+  z-index:1;
+  .navbar-brand {
+    color: white;
+  }
+  .navbar-nav > li > a{
+    color:white;
+  }
+
+}
+
+
+
+
+
+#login-block {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.login-box {
+  position: relative;
+  max-width: 480px;
+  background: #3498db;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding-bottom: 20px;
+  margin-top: 80px;
+}
+
+.login-box hr {
+  margin: 10px auto 20px;
+  width: 70%;
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+.login-logo {
+  text-align: center;
+  padding: 15px 0 10px;
+  color:white;
+  font-size:20px;
+}
+
+
+.alert {
+  margin: 20px auto;
+  width: 70%;
+}
+
+.btn.btn-login {
+  width: 120px;
+  display: block;
+  margin: 20px auto 20px;
+  color: white;
+  text-transform: uppercase;
+  background: #2980b9;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.login-form input {
+  display: block;
+  margin: 0 auto 15px;
+  width: 70%;
+  background: #fefefe;
+  border: 0;
+  color: #6c6c6c;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.login-links {
+  text-align: center;
+}
+
+.login-links a {
+color: #FFF;
+display: inline-block;
+padding: 5px;
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-ms-transition: all .5s ease;
+-o-transition: all .5s ease;
+transition: all .5s ease;
+opacity: 0.7;
 }
