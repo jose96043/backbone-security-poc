@@ -1,0 +1,10 @@
+doctype
+html
+	head
+		title	Backbone Authentication Tutorial
+		link(rel="stylesheet", type="text/css", href="styles/main.css")
+		script(type="text/javascript", data-main='scripts/init', src="bower_components/requirejs/require.js")
+		script(type="text/javascript").
+			var csrf = "#{csrf}"
+	body
+		div.container

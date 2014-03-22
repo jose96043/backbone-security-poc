@@ -1,0 +1,23 @@
+@import 'sass-bootstrap/lib/bootstrap';
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 400px;
+}
+
+$primary-color: #2980b9;
+$secondary-color: #3498db;
+
+/*Navbar*/
+.navbar {
+   /*background-color: #003040;
+   border-color: #003040;*/
+   background-color: $primary-color;
+   border-color: $primary-color;
+   margin-bottom:0px;
+   border-radius:0px;
+   z-index:1;
+   .navbar-brand {
+        color: white;
+    }
+}
