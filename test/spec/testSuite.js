@@ -9,7 +9,8 @@ define(function() {
 		'spec/routers/router.js',
 		'spec/views/HomeView.js',
 		'spec/views/LoginView.js',
-		'spec/views/NavbarView.js'
+		'spec/views/NavbarView.js',
+		'spec/views/SideMenu.js'
 		]
 	};
 });

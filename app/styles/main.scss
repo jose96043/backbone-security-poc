@@ -1,10 +1,10 @@
-$fa-font-path: "../../bower_components/components-font-awesome/fonts";
-@import 'components-font-awesome/scss/font-awesome';
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+@import 'font-awesome/scss/font-awesome';
 @import 'sass-bootstrap/lib/bootstrap';
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 400px;
+.container {
+	padding: 0px;
+	margin: 0px;
 }
 
 $primary-color: #2980b9;
@@ -26,6 +26,90 @@ $secondary-color: #3498db;
     color:white;
   }
 
+}
+
+
+
+
+
+
+
+
+/*custom font for text*/
+@import url(http://fonts.googleapis.com/css?family=Nunito);
+/*CSS file for fontawesome - an iconfont we will be using. This CSS file imported contains the font-face declaration. More info: http://fortawesome.github.io/Font-Awesome/ */
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+/*Basic reset*/
+* {margin: 0; padding: 0;}
+
+body {
+    padding-top:0px;
+    /*background: #4EB889;*/
+    font-family: Nunito, arial, verdana;
+}
+#accordian {
+    /*background: #004050;*/
+    background: $secondary-color;
+    color: white;
+    position:fixed;
+    height:100%;
+    padding:0px;
+    /*Some cool shadow and glow effect*/
+   /*box-shadow: 
+        0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+        0 0 200px 1px rgba(255, 255, 255, 0.5);*/
+}
+/*heading styles*/
+#accordian h3 {
+    font-size: 12px;
+    line-height: 34px;
+    padding: 0 10px;
+    cursor: pointer;
+    margin-top:0px;
+    margin-bottom:0px;
+    /*fallback for browsers not supporting gradients*/
+    /*background: #003040; 
+    background: linear-gradient(#003040, #002535);*/
+    background: $primary-color;
+    background: linear-gradient($primary-color, $primary-color - #000505)
+}
+/*heading hover effect*/
+#accordian h3:hover {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+/*iconfont styles*/
+#accordian h3 span {
+    font-size: 16px;
+    margin-right: 10px;
+}
+/*list items*/
+#accordian li {
+    list-style-type: none;
+}
+/*links*/
+#accordian ul ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 27px;
+    display: block;
+    padding: 0 15px;
+    /*transition for smooth hover animation*/
+    transition: all 0.15s;
+}
+/*hover effect on links*/
+#accordian ul ul li a:hover {
+    /*background: #003545;*/
+    background: $primary-color;
+    border-left: 5px solid lightgreen;
+}
+/*Lets hide the non active LIs by default*/
+#accordian ul ul {
+    display: none;
+}
+#accordian li.active ul {
+    display: block;
 }
 
 

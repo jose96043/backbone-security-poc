@@ -252,11 +252,11 @@ module.exports = function (grunt) {
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'bower_components/requirejs/require.js'
+                        'bower_components/requirejs/require.js',
                     ]
                 },{
                     expand: true, 
-                    cwd: '<%= yeoman.app %>/bower_components/components-font-awesome/fonts', 
+                    cwd: '<%= yeoman.app %>bower_components/components-font-awesome/fonts', 
                     dest: '<%= yeoman.dist %>/fonts',
                     src: '*.*'
                 }]
