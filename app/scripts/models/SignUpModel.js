@@ -12,9 +12,7 @@ function( Backbone ) {
 	return Backbone.Model.extend({
 		initialize: function() {
 			console.log("initialize a Signupmodel model");
-			Backbone.Validation.configure({
-	   			forceUpdate: true
-			});
+			
 
 			_.extend(Backbone.Validation.callbacks, {
 			    valid: function (view, attr, selector) {
@@ -37,17 +35,21 @@ function( Backbone ) {
 			});
 		},
 
-		defaults: {
-			firstName: null,
-			lastName: null,
-			email: null,
-			password: null,
-		},
-
 		validation: {
 			firstName: {
 	    		required: true
-	     	}
+	     	},
+	     	lastName: {
+	    		required: true
+	     	},
+	     	email: {
+	     		required: true,
+	     		pattern: 'email'
+	     	},
+	     	password: {
+            	minLength: 8,
+            	msg: 'Password has to be at least 8 characters'
+        	},
 		},
 
 		urlRoot : '/register'

@@ -14,6 +14,9 @@ function($, BaseView, Session, Handlebars, SignUpTmpl){
 		template: Handlebars.compile(SignUpTmpl),
 		initialize: function() {
 			console.log("initialize a Signupview View");
+			Backbone.Validation.configure({
+	   			forceUpdate: true
+			});
 			Backbone.Validation.bind(this);
 		},
 
@@ -23,10 +26,25 @@ function($, BaseView, Session, Handlebars, SignUpTmpl){
             	setOptions: {
                 	validate: true
             	}
+            },
+            '[name=lastName]' : {
+				observe: 'lastName',
+            	setOptions: {
+                	validate: true
+            	}
+            },
+            '[name=email]' : {
+				observe: 'email',
+            	setOptions: {
+                	validate: true
+            	}
+            },
+            '[name=password]' : {
+				observe: 'password',
+            	setOptions: {
+                	validate: true
+            	}
             }
-			// '#lastName' : 'lastName',
-			// '#email' : 'email',
-			// '#password' : 'password'
 		},
 
 		events: {
