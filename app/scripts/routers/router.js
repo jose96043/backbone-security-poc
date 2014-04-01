@@ -88,6 +88,13 @@ define([
 		},
 
 		showSignUp : function(){
+			console.log("SIGNUPVIEW")
+			var self = this;
+			require(['views/SignUpView','models/SignUpModel'], function(SignUpView,SignUpModel){
+				var signUpModel = new SignUpModel();
+				var signupView = new SignUpView({model:signUpModel});
+				self.changeView("container",signupView);
+			});
 		},
 
 		showProfile : function(){
