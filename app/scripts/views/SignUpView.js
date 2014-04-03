@@ -60,7 +60,7 @@ function($, BaseView, Session, Handlebars, SignUpTmpl){
 		signup: function(){
 			console.log("signup func")
 			if(this.model.isValid(true)) {       
-	            // this.model.save();
+	            this.model.save();
 	            alert('Great Success!');
         	}
 		},

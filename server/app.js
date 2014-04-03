@@ -191,9 +191,36 @@ db.once('open', function callback () {
 		var id = req.params.id;
 		Users.find({"_id":id}).exec(function(err, user){
 			if(user.length===0){
+
 				return res.send(400);
 			}else{
 				return res.send(user);
+			}
+		});
+	});
+	
+	//Register new user to mongo DB.
+	app.post('/register', function(req, res){
+		var reqBody = req.body;
+		Users.find({"email":reqBody.email}).exec(function(err, user){
+			if(user.length===0){
+				var newUser = new Users({
+					firstName : reqBody.firstName,
+					lastName : reqBody.lastName,
+					email : reqBody.email,
+					password : reqBody.password
+				});
+				newUser.save(function (err) {
+					if (err) {
+						console.error("Error saving user into database.");
+						return res.send(404);
+					}else{
+						console.log("New user added to database.");
+						return res.send({response: "success"});
+					}
+				});
+			}else{
+				return res.send({response: "exists"});
 			}
 		});
 	});
