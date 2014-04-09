@@ -2,13 +2,22 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
 @import 'font-awesome/scss/font-awesome';
 @import 'sass-bootstrap/lib/bootstrap';
 
+body{
+  background: #eceef3;
+
+}
+
+
 .container {
 	padding: 0px;
 	margin: 0px;
 }
 
-$primary-color: #2980b9;
-$secondary-color: #3498db;
+// $primary-color: #2980b9;
+// $secondary-color: #3498db;
+
+$primary-color: #27ae60;
+$secondary-color: #2ecc71;
 
 /*Navbar*/
 .navbar {
@@ -124,7 +133,8 @@ body {
 .login-box {
   position: relative;
   max-width: 480px;
-  background: #3498db;
+  // background: #3498db;
+  background: $primary-color;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -202,4 +212,14 @@ opacity: 0.7;
 
 .form-group {
   margin-bottom: 0px;
+}
+
+
+.well {
+
+  legend{
+    border-bottom: 1px solid $primary-color;
+  }
+  background-color:$secondary-color;
+  border: 1px solid $primary-color;
 }

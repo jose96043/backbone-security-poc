@@ -43,6 +43,11 @@ define([
 				to a route that requires login, save the path in session
 				to redirect the user back to path after successful login*/
 				Session.set('redirectFrom', path);
+				this.changeView("head", new NavbarView(
+					{
+						user:Session.get('user')
+					}
+				));
 				Backbone.history.navigate('login', { trigger : true });
 			}else if(isAuth && cancleAccess){
 				/*User is authenticated and tries to go to login, register ...
